@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Clipboard Auto-Typer",
+  "version": "2.0",
+  "description": "Alt+V inserts your clipboard instantly. Alt+Shift+V types it out gradually. Works in editors that block paste.",
+  "permissions": ["clipboardRead", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Clipboard Auto-Typer"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true,
+      "world": "MAIN"
+    }
+  ]
+}

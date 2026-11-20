@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font: 13px sans-serif; width: 260px; padding: 12px; }
+    h3 { margin: 0 0 8px; font-size: 14px; }
+    label { display: block; margin: 8px 0 2px; }
+    input[type=number] { width: 80px; }
+    .keys { margin-top: 10px; color: #444; line-height: 1.6; }
+    kbd { background: #eee; border: 1px solid #ccc; border-radius: 3px; padding: 0 4px; }
+    #saved { color: #2e7d32; height: 16px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h3>Clipboard Auto-Typer</h3>
+  <label for="delay">Typing speed: delay per character (ms)</label>
+  <input id="delay" type="number" min="0" max="500">
+  <label><input id="toast" type="checkbox"> Show success messages</label>
+  <div id="saved"></div>
+  <div class="keys">
+    <kbd>Alt</kbd>+<kbd>V</kbd> insert instantly<br>
+    <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> type it out<br>
+    <kbd>Esc</kbd> stop typing
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
